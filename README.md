@@ -61,7 +61,7 @@ Généralement, on commence par écrire un test, puis du code qui y répond. Ens
 Le Projet ```Solution``` contient un exemple de solution possible et fonctionnelle qui répond à l'exercice. Vous pouvez vous en servir (avec modération...) pour vous aider lorsque vous êtes bloqués. <br/>
 Avec la solution et les tests, vous devriez pouvoir vous en sortir seuls. Cependant, n'hésitez pas à me demander de l'aide si vous en avez besoin ou si vous ne comprenez pas quelque chose.
 
-#### Pour aller plus loin
+### Pour aller plus loin
 
 Le code est volontairement non optimisé afin de rester accessible aux débutants, Solution comprise. <br/>
 N'hésitez pas à essayer d'optimiser le code en utilisant des bibliothèques telles que ```Linq``` et à me demander de l'aide si vous souhaitez faire cet exercice d'optimisation. <br/> <br/>

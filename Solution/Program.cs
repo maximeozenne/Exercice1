@@ -37,7 +37,7 @@ internal class Program
 
             while (!estDisponible)
             {
-                // On simule le fait que le client est relou, et est capable de demander une chambre déjà occupée.
+                // On simule le fait que le client est pénible, et est capable de demander une chambre déjà occupée.
                 // Le client prend donc une chambre aléatoire dans toutes celles de l'hotel, sans prendre en compte
                 // Que le réceptionniste lui a déjà donné la liste des chambres disponibles.
                 chambreVoulue = random.Next(nombreDeChambres);
@@ -65,6 +65,8 @@ internal class Program
 
     }
 
+    // Les méthodes suivantes permettent de faciliter les intéractions avec la Console.
+    // Elles rendent l'écrire du dialogue plus fluide et plus lisible.
     static void ReceptionnisteDit(string dire)
     {
         Dire("Réceptionniste", dire);

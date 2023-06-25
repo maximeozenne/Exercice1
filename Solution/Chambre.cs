@@ -1,4 +1,4 @@
-﻿namespace Exercice;
+﻿namespace Solution;
 public class Chambre
 {
     public int Numero { get; set; }

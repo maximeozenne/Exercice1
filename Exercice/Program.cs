@@ -65,6 +65,8 @@ internal class Program
 
     }
 
+    // Les méthodes suivantes permettent de faciliter les intéractions avec la Console.
+    // Elles rendent l'écrire du dialogue plus fluide et plus lisible.
     static void ReceptionnisteDit(string dire)
     {
         Dire("Réceptionniste", dire);

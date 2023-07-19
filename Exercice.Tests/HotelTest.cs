@@ -42,7 +42,7 @@ public class HotelTest
         var wantedRoom = _sut._chambres.First();
         var otherRoom = _sut._chambres.Last();
 
-        _sut.OccuperChambre(wantedRoom.Numero);
+        _sut._chambres.First(c => c.Numero == wantedRoom.Numero).EstOccupee = true;
 
         var chambresLibres = _sut.DonnerLaListeDesChambresLibres();
 
@@ -60,7 +60,7 @@ public class HotelTest
 
         _sut.OccuperAleatoirementLesChambres();
 
-        var chambresLibres = _sut.DonnerLaListeDesChambresLibres();
+        var chambresLibres = _sut._chambres.Where(c => !c.EstOccupee).ToList();
 
         Check.That(chambresLibres.Count).IsEqualTo(0);
     }
@@ -74,7 +74,7 @@ public class HotelTest
 
         _sut.OccuperAleatoirementLesChambres();
 
-        var chambresLibres = _sut.DonnerLaListeDesChambresLibres();
+        var chambresLibres = _sut._chambres.Where(c => !c.EstOccupee).ToList();
 
         Check.That(chambresLibres.Count).IsEqualTo(_sut._chambres.Length);
     }

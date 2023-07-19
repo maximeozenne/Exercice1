@@ -20,9 +20,7 @@ public class HotelTest
     [Fact]
     public void OccuperChambre_WhenAskingForAFreeRoom_ThenReturnTrue()
     {
-        var chambresLibres = _sut.DonnerLaListeDesChambresLibres();
-
-        var result = _sut.OccuperChambre(chambresLibres.First().Numero);
+        var result = _sut.OccuperChambre(_sut._chambres.Where(c => !c.EstOccupee).First().Numero);
 
         Check.That(result).IsTrue();
     }
@@ -30,12 +28,10 @@ public class HotelTest
     [Fact]
     public void OccuperChambre_WhenAskingForANotFreeRoom_ThenReturnFalse()
     {
-        var chambresLibres = _sut.DonnerLaListeDesChambresLibres();
+        var wantedRoom = _sut._chambres.Where(c => !c.EstOccupee).First().Numero;
+        _sut._chambres.First(c => c.Numero == wantedRoom).EstOccupee = true;
 
-        var wantedRoom = chambresLibres.First().Numero;
-        _sut.OccuperChambre(wantedRoom);
-
-        var result = _sut.OccuperChambre(wantedRoom);
+        var result = _sut.OccuperChambre(_sut._chambres.First(c => c.Numero == wantedRoom).Numero);
 
         Check.That(result).IsFalse();
     }
